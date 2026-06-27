@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: treino-no-deck
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NEXT_PUBLIC_EVENT_DATE
+        value: 2026-08-23T06:30:00-03:00
+      - key: NEXT_PUBLIC_TOTAL_VAGAS
+        value: "50"
+      - key: NEXT_PUBLIC_VAGAS_PREENCHIDAS
+        value: "38"
+      - key: NEXT_PUBLIC_EVENT_ADDRESS
+        value: Le Buffet Lounge — Av. Saturnino Rangel Mauro, 501 - Jardim da Penha, Vitória - ES
+      - key: NEXT_PUBLIC_EVENT_MAPS_URL
+        value: https://www.google.com/maps/search/?api=1&query=Le+Buffet+Lounge+Vitória+ES
+      - key: NEXT_PUBLIC_BODYWISE_ADDRESS
+        value: R. da Grécia, 320 A - Santa Luíza, Vitória - ES, 29045-225
+      - key: NEXT_PUBLIC_BODYWISE_MAPS_URL
+        value: https://www.google.com/maps/search/?api=1&query=Body+Wise+Vitória+ES
+      - key: NEXT_PUBLIC_INSTAGRAM_BODYWISE
+        value: https://www.instagram.com/bodywise.treinamentofisico/
+      - key: NEXT_PUBLIC_INSTAGRAM_LEBUFFET
+        value: https://www.instagram.com/lebuffetoficial/
