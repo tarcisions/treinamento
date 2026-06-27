@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-night: #0A0A0A;
+  --color-charcoal: #1C1B19;
+  --color-cream: #FAF8F4;
+  --color-gold: #B08D57;
+  --color-gold-light: #D4B483;
+  --color-sand: #D8C9B0;
+  --color-peach: #F2C9A0;
+  --color-terracotta: #E0876A;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #B08D57 transparent;
+  }
+}
+
+@layer utilities {
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 40px rgba(176, 141, 87, 0.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes scroll-indicator {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+}
+
+@keyframes progress-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes draw-line {
+  from { scale: 0 1; }
+  to { scale: 1 1; }
+}
