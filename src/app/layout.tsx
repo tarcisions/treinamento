@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces, Manrope, Archivo, Sora } from "next/font/google";
 import { MotionConfig } from "framer-motion";
 import "./globals.css";
 
@@ -11,6 +11,19 @@ const fraunces = Fraunces({
 
 const manrope = Manrope({
   variable: "--font-manrope",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const archivo = Archivo({
+  variable: "--font-archivo",
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  display: "swap",
+});
+
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
   display: "swap",
 });
@@ -43,12 +56,12 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${manrope.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${manrope.variable} ${archivo.variable} ${sora.variable} h-full antialiased`}
     >
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="min-h-full bg-night font-sans text-cream">
+      <body className="min-h-full font-sans antialiased">
         <MotionConfig reducedMotion="user">
           {children}
         </MotionConfig>

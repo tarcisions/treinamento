@@ -27,6 +27,7 @@ export function Manifesto() {
           muted
           loop
           playsInline
+          suppressHydrationWarning
           className="h-full w-full object-cover"
         >
           <source src="/assets/videos/sunrise-loop.mp4" type="video/mp4" />
