@@ -61,7 +61,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="min-h-full bg-night font-sans text-cream">
+      <body className="min-h-full font-sans antialiased">
         <MotionConfig reducedMotion="user">
           {children}
         </MotionConfig>
