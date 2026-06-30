@@ -48,7 +48,6 @@ export function Gallery() {
                 muted
                 loop
                 playsInline
-                suppressHydrationWarning
                 className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
               >
                 <source src={item.src} type="video/mp4" />
@@ -89,7 +88,6 @@ export function Gallery() {
                 muted
                 loop
                 playsInline
-                suppressHydrationWarning
                 controls
                 className="h-full w-full object-cover"
               >

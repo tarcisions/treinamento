@@ -43,7 +43,6 @@ export function Hero() {
           muted
           loop
           playsInline
-          suppressHydrationWarning
           className="h-full w-full object-cover"
         >
           <source src="/assets/videos/hero-bg.mp4" type="video/mp4" />

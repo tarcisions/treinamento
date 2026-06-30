@@ -12,8 +12,6 @@
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-manrope);
-  --font-archivo: var(--font-archivo);
-  --font-sora: var(--font-sora);
 }
 
 @layer base {
