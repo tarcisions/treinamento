@@ -82,23 +82,23 @@ export function Hero() {
             {content.event.subtitle}
           </motion.p>
 
-          <motion.div
-            variants={fadeUp}
-            className="flex flex-col gap-4 pt-4 sm:flex-row"
-          >
-            <a
-              href="#"
-              className="inline-flex h-12 items-center justify-center rounded-sm bg-gold px-8 text-sm font-semibold tracking-widest text-night transition-all duration-200 hover:bg-gold-light hover:shadow-[0_0_30px_-5px_#B08D57] active:scale-[0.97]"
+            <motion.div
+              variants={fadeUp}
+              className="flex flex-col items-center gap-4 pt-4 sm:flex-row"
             >
-              {content.event.ctaPrimary}
-            </a>
-            <a
-              href="#experience"
-              className="inline-flex h-12 items-center justify-center rounded-sm border border-cream/20 px-8 text-sm font-semibold tracking-widest text-cream transition-all duration-200 hover:border-cream/40 active:scale-[0.97]"
-            >
-              {content.event.ctaSecondary}
-            </a>
-          </motion.div>
+              <a
+                href="#inscricoes"
+                className="inline-flex h-12 items-center justify-center rounded-sm bg-gold px-8 text-sm font-semibold tracking-widest text-night transition-all duration-200 hover:bg-gold-light hover:shadow-[0_0_30px_-5px_#B08D57] active:scale-[0.97]"
+              >
+                {content.event.ctaPrimary}
+              </a>
+              <a
+                href="#experience"
+                className="inline-flex h-12 items-center justify-center rounded-sm border border-cream/20 px-8 text-sm font-semibold tracking-widest text-cream transition-all duration-200 hover:border-cream/40 active:scale-[0.97]"
+              >
+                {content.event.ctaSecondary}
+              </a>
+            </motion.div>
         </motion.div>
 
         <motion.div

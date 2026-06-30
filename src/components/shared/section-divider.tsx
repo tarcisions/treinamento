@@ -9,7 +9,7 @@ export function SectionDivider() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <div ref={ref} className="flex justify-center py-12 md:py-16">
+    <div ref={ref} className="flex justify-center py-8 md:py-10">
       <motion.div
         className="h-px w-24 bg-gold/40"
         initial={{ scaleX: 0 }}

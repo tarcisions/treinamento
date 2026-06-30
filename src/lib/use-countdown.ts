@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 interface Countdown {
   days: number;
@@ -31,19 +31,15 @@ function calcDiff(target: Date): Countdown {
 }
 
 export function useCountdown(targetDate: string): Countdown {
-  const [state, setState] = useState<Countdown>({
-    days: 0, hours: 0, minutes: 0, seconds: 0, isExpired: false, isReady: false,
-  });
-
-  const tick = useCallback(() => {
-    setState(calcDiff(new Date(targetDate)));
-  }, [targetDate]);
+  const target = new Date(targetDate);
+  const [state, setState] = useState<Countdown>(() => calcDiff(target));
 
   useEffect(() => {
-    tick();
-    const id = setInterval(tick, 1000);
+    const id = setInterval(() => {
+      setState(calcDiff(new Date(targetDate)));
+    }, 1000);
     return () => clearInterval(id);
-  }, [tick]);
+  }, [targetDate]);
 
   return state;
 }

@@ -42,12 +42,14 @@ export function Gallery() {
                 delay: i * 0.1,
                 ease: easeOutExpo,
               }}
+              aria-label={item.alt}
             >
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
+                poster={item.poster}
                 className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
               >
                 <source src={item.src} type="video/mp4" />
@@ -89,13 +91,14 @@ export function Gallery() {
                 loop
                 playsInline
                 controls
+                poster={content.gallery[activeIndex].poster}
                 className="h-full w-full object-cover"
               >
                 <source src={content.gallery[activeIndex].src} type="video/mp4" />
               </video>
               <button
                 onClick={() => setActiveIndex(null)}
-                className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
+                className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
                 aria-label="Fechar galeria"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

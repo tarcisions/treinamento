@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { content } from '@/lib/content';
-import { easeOutExpo, easeInOut } from '@/lib/motion';
+import { easeOutExpo } from '@/lib/motion';
 import { SectionDivider } from '@/components/shared/section-divider';
 import { ScrollReveal } from '@/components/shared/scroll-reveal';
 
@@ -64,7 +64,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-night py-20 md:py-28">
+    <section className="bg-charcoal py-20 md:py-28">
       <div className="mx-auto max-w-3xl px-6">
         <ScrollReveal>
           <span className="text-xs font-medium tracking-[0.3em] text-gold uppercase">
