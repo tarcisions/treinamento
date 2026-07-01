@@ -137,7 +137,7 @@ export const content = {
     },
     {
       q: 'Existe estacionamento?',
-      a: 'Sim, vallet e estacionamento próprio no local, em parceria com o Le Buffet Lounge.',
+      a: 'Sim, estacionamento próprio no local, em parceria com o Le Buffet Lounge.',
     },
     {
       q: 'O evento ocorrerá em caso de chuva?',
