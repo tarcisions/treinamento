@@ -107,7 +107,7 @@ export const content = {
       },
     ],
     description: 'O TREINO NO DECK reúne Body Wise, Le Buffet Lounge e Mundo da Cosmetologia by Marcella Porto em uma experiência única que une movimento, bem-estar e autocuidado em um dos cenários mais bonitos da cidade.',
-    highlights: ['Deck premium com vista panorâmica de Vitória', 'Jardim vertical de 9m', 'Cobertura retrátil — ambiente aberto ou climatizado', 'Espaço preparado para uma experiência fitness exclusiva'],
+    highlights: ['Jardim vertical de 9m', 'Cobertura retrátil — ambiente aberto ou climatizado', 'Espaço preparado para uma experiência fitness exclusiva'],
   },
 
   timeline: [
@@ -133,7 +133,7 @@ export const content = {
     },
     {
       q: 'O que devo levar?',
-      a: 'Roupa de treino, tênis confortável, garrafa de água e disposição. Toalha e kit de boas-vindas estão inclusos.',
+      a: 'Roupa de treino, tênis confortável, garrafa de água e disposição.',
     },
     {
       q: 'Existe estacionamento?',
@@ -142,10 +142,6 @@ export const content = {
     {
       q: 'O evento ocorrerá em caso de chuva?',
       a: 'Em caso de chuva, o evento é remarcado e os inscritos são avisados com antecedência por e-mail/WhatsApp.',
-    },
-    {
-      q: 'Posso levar acompanhantes?',
-      a: 'Vagas para acompanhantes sujeitas à disponibilidade — recomendamos inscrição individual antecipada para garantir lugar.',
     },
   ],
 

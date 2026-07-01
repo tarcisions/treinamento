@@ -71,13 +71,19 @@ export function Venue() {
         </div>
 
         <ScrollReveal delay={0.2}>
-          <div className="mt-8 rounded-sm border border-cream/5 bg-night/40 p-4 backdrop-blur md:p-6">
-            <p className="text-sm leading-relaxed text-sand/60 text-center max-w-3xl mx-auto">
+          <div className="mt-8 rounded-sm border border-gold/10 bg-gradient-to-br from-night/80 to-charcoal/80 p-6 backdrop-blur md:p-8">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="h-px flex-1 bg-gradient-to-r from-gold/30 to-transparent" />
+              <span className="text-[10px] font-medium tracking-[0.35em] text-gold/60 uppercase">Sobre o evento</span>
+              <div className="h-px flex-1 bg-gradient-to-l from-gold/30 to-transparent" />
+            </div>
+            <p className="text-sm leading-relaxed text-sand/70 text-center max-w-3xl mx-auto md:text-base">
               {content.venue.description}
             </p>
-            <div className="mt-3 flex flex-wrap justify-center gap-1">
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
               {content.venue.highlights.map((h) => (
-                <span key={h} className="rounded-full border border-gold/10 px-2.5 py-1 text-[10px] text-sand/50">
+                <span key={h} className="inline-flex items-center gap-1.5 rounded-full border border-gold/15 bg-gold/[0.04] px-3 py-1.5 text-[11px] font-medium text-sand/60">
+                  <span className="h-1 w-1 rounded-full bg-gold/50" />
                   {h}
                 </span>
               ))}
