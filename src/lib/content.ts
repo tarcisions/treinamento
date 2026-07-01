@@ -2,7 +2,7 @@ export const content = {
   event: {
     name: 'BODY WISE x LE BUFFET LOUNGE',
     title: 'TREINO NO DECK',
-    subtitle: 'Treine acima da rotina. Uma manhã de movimento, energia e conexão em uma experiência fitness exclusiva.',
+    subtitle: 'Treine acima da rotina. Um dia de movimento, energia e conexão em uma experiência fitness exclusiva.',
     subtitleInstitutional: 'Uma experiência exclusiva de movimento, energia e conexão em um dos cenários mais bonitos da cidade.',
     ctaPrimary: 'GARANTIR MINHA VAGA',
     ctaSecondary: 'SAIBA MAIS',
