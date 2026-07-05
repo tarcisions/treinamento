@@ -21,27 +21,17 @@ export function Manifesto() {
 
   return (
     <section className="relative overflow-hidden bg-night py-28 md:py-40">
-      <div className="absolute inset-0 opacity-[0.03]">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-full w-full object-cover"
-        >
-          <source src="/assets/videos/sunrise-loop.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.02] via-transparent to-gold/[0.01]" />
 
       <div ref={ref} className="relative z-10 mx-auto max-w-6xl px-8 text-center">
-        <div className="space-y-1">
+        <div className="space-y-2">
           {content.manifesto.map((line, i) => {
             if (line.text === null) {
-              return <div key={i} className="h-4 md:h-5" />;
+              return <div key={i} className="h-6 md:h-8" />;
             }
 
             const size =
-              line.size === 'xl' ? 'text-4xl md:text-7xl font-display font-bold leading-tight tracking-tight' :
+              line.size === 'xl' ? 'text-4xl md:text-6xl font-display font-bold leading-tight tracking-tight' :
               line.size === 'lg' ? 'text-xl md:text-3xl font-display font-semibold leading-snug' :
               line.size === 'sm' ? 'text-sm tracking-[0.3em] text-gold/50 uppercase' :
               'text-lg md:text-2xl font-display font-light leading-snug text-cream/90';

@@ -1,81 +1,119 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { content } from '@/lib/content';
-import { easeOutExpo } from '@/lib/motion';
-import { SectionDivider } from '@/components/shared/section-divider';
 import { ScrollReveal } from '@/components/shared/scroll-reveal';
 
-export function Gallery() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const ref = useRef<HTMLDivElement>(null);
+const tags = ['01', '02', '03'];
+
+function useScrollProgress(ref: React.RefObject<HTMLElement | null>) {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const update = () => {
+      const rect = el.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const vh = window.innerHeight;
+      const dist = Math.abs(center - vh / 2);
+      const maxDist = vh;
+      const p = Math.max(0, 1 - dist / maxDist);
+      setProgress(p);
+    };
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => window.removeEventListener('scroll', update);
+  }, [ref]);
+
+  return progress;
+}
+
+function VideoBlock({ item, index }: { item: typeof content.gallery[number]; index: number }) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const progress = useScrollProgress(sectionRef);
+  const [open, setOpen] = useState(false);
+
+  const isVisible = progress > 0.1;
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    if (isVisible) {
+      videoRef.current.play().catch(() => {});
+    } else {
+      videoRef.current.pause();
+    }
+  }, [isVisible]);
+
+  const opacity = Math.min(1, progress * 2);
+  const scale = 0.85 + progress * 0.15;
+  const blur = Math.max(0, (1 - progress) * 8);
 
   return (
-    <section className="bg-night py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <ScrollReveal>
-          <span className="text-xs font-medium tracking-[0.3em] text-gold uppercase">
-            Galeria
-          </span>
-          <h2 className="font-display mt-3 text-3xl leading-tight tracking-tight text-cream md:text-5xl">
-            Momentos que inspiram
-          </h2>
-        </ScrollReveal>
-
-        <SectionDivider />
-
-        <div
-          ref={ref}
-          className="grid gap-4 sm:grid-cols-2"
+    <>
+      <div
+        ref={sectionRef}
+        className="relative flex min-h-[60vh] items-end overflow-hidden md:min-h-[70vh]"
+        style={{
+          opacity,
+          transform: `scale(${scale})`,
+          filter: `blur(${blur}px)`,
+          transition: 'opacity 0.15s, transform 0.15s, filter 0.15s',
+        }}
+      >
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={item.poster}
+          className="absolute inset-0 h-full w-full object-cover"
         >
-          {content.gallery.map((item, i) => (
-            <motion.button
-              key={item.src}
-              onClick={() => setActiveIndex(i)}
-              className="group relative aspect-video overflow-hidden rounded-sm border border-cream/5 bg-charcoal outline-none focus-visible:ring-2 focus-visible:ring-gold"
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.1,
-                ease: easeOutExpo,
-              }}
-              aria-label={item.alt}
-            >
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster={item.poster}
-                className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
-              >
-                <source src={item.src} type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20" />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 backdrop-blur-sm">
-                  <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
+          <source src={item.src} type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/40" />
+
+        <button
+          onClick={() => setOpen(true)}
+          className="group relative z-10 w-full outline-none"
+          aria-label={item.alt}
+        >
+          <div className="mx-auto max-w-6xl px-6 pb-12 md:pb-20">
+            <div className="max-w-xl">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-semibold tracking-[0.25em] text-gold uppercase drop-shadow-[0_1px_6px_rgba(0,0,0,1)]">
+                  {item.tag}
+                </span>
+                <div className="h-px w-8 bg-gold/70" />
+                <span className="text-[10px] font-medium tracking-[0.15em] text-white/80 drop-shadow-[0_1px_4px_rgba(0,0,0,1)]">
+                  {tags[index]}
+                </span>
               </div>
-            </motion.button>
-          ))}
-        </div>
+              <h3 className="font-display mt-3 text-2xl leading-tight tracking-tight text-cream drop-shadow-[0_2px_8px_rgba(0,0,0,1)] md:text-4xl">
+                {item.label}
+              </h3>
+            </div>
+
+          </div>
+        </button>
       </div>
 
       <AnimatePresence>
-        {activeIndex !== null && (
+        {open && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.35 }}
-            onClick={() => setActiveIndex(null)}
+            transition={{ duration: 0.3 }}
+            onClick={() => setOpen(false)}
           >
             <motion.div
               className="relative aspect-video w-full max-w-4xl overflow-hidden rounded-sm"
@@ -91,15 +129,16 @@ export function Gallery() {
                 loop
                 playsInline
                 controls
-                poster={content.gallery[activeIndex].poster}
+                preload={index === 0 ? 'metadata' : 'none'}
+                poster={item.poster}
                 className="h-full w-full object-cover"
               >
-                <source src={content.gallery[activeIndex].src} type="video/mp4" />
+                <source src={item.src} type="video/mp4" />
               </video>
               <button
-                onClick={() => setActiveIndex(null)}
-                className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
-                aria-label="Fechar galeria"
+                onClick={() => setOpen(false)}
+                className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-all hover:bg-black/70 hover:scale-105"
+                aria-label="Fechar"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -109,6 +148,59 @@ export function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
+    </>
+  );
+}
+
+export function Gallery() {
+  return (
+    <section className="bg-night">
+      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <ScrollReveal>
+          <div className="flex flex-col items-center gap-6">
+            <motion.div
+              className="h-px w-0 bg-gradient-to-r from-transparent via-gold/40 to-transparent"
+              animate={{ width: '3rem' }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            />
+            <motion.h2
+              className="font-display text-4xl leading-tight tracking-tight text-cream md:text-6xl"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { transition: { staggerChildren: 0.2, delayChildren: 0.3 } },
+              }}
+            >
+              <motion.span
+                className="inline-block mr-3"
+                variants={{
+                  hidden: { opacity: 0, y: 24, filter: 'blur(6px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                Assim foi a nossa
+              </motion.span>
+              <motion.span
+                className="relative inline-block text-gold"
+                variants={{
+                  hidden: { opacity: 0, y: 24, filter: 'blur(6px)' },
+                  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+                }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                primeira edição
+              </motion.span>
+            </motion.h2>
+          </div>
+        </ScrollReveal>
+      </div>
+
+      <div className="flex flex-col">
+        {content.gallery.map((item, i) => (
+          <VideoBlock key={item.src} item={item} index={i} />
+        ))}
+      </div>
     </section>
   );
 }

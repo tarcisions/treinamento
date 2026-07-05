@@ -12,7 +12,7 @@ export function Timeline() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section ref={ref} id="timeline" className="bg-charcoal py-20 md:py-28">
+    <section ref={ref} id="timeline" className="bg-night py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
           <span className="text-xs font-medium tracking-[0.3em] text-gold uppercase">
@@ -25,7 +25,8 @@ export function Timeline() {
 
         <SectionDivider />
 
-        <div className="mx-auto max-w-3xl">
+          <div className="relative mx-auto max-w-3xl md:max-w-4xl">
+          <div className="absolute left-[7px] top-0 bottom-0 w-px bg-gradient-to-b from-gold/20 via-gold/10 to-transparent md:left-[9px]" />
           {content.timeline.map((item, i) => (
             <motion.div
               key={item.time}

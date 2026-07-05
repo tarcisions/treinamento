@@ -5,9 +5,19 @@ export const content = {
     subtitle: 'Treine acima da rotina. Um dia de movimento, energia e conexão em uma experiência fitness exclusiva.',
     subtitleInstitutional: 'Uma experiência exclusiva de movimento, energia e conexão em um dos cenários mais bonitos da cidade.',
     ctaPrimary: 'GARANTIR MINHA VAGA',
-    ctaSecondary: 'SAIBA MAIS',
+    ctaSecondary: 'VER PROGRAMAÇÃO',
     ctaSoon: 'INSCRIÇÕES ABREM EM BREVE',
   },
+
+  pricing: {
+    tag: '1º LOTE',
+    value: 'R$ 247',
+    perPerson: 'por pessoa',
+    disclaimer: 'Vagas do 1º lote limitadas — garanta seu lugar no valor especial',
+    cta: 'QUERO MINHA VAGA',
+  },
+
+  galleryHeader: 'Assim foi a nossa primeira edição',
 
   manifesto: [
     { text: 'Mais do que um treino.', size: 'md' },
@@ -146,9 +156,17 @@ export const content = {
   ],
 
   gallery: [
-    { src: '/assets/videos/reel-lebuffet-1.mp4', poster: '/assets/thumbnails/reel-lebuffet-1.jpg', alt: 'Le Buffet Lounge vista rooftop' },
-    { src: '/assets/videos/reel-lebuffet-2.mp4', poster: '/assets/thumbnails/reel-lebuffet-2.jpg', alt: 'Le Buffet Lounge experiência' },
-    { src: '/assets/videos/reel-bodywise-1.mp4', poster: '/assets/thumbnails/reel-bodywise-1.jpg', alt: 'Body Wise treino' },
-    { src: '/assets/videos/reel-bodywise-2.mp4', poster: '/assets/thumbnails/reel-bodywise-2.jpg', alt: 'Body Wise energia' },
+    { src: '/assets/videos/reel-lebuffet-2.mp4', poster: '/assets/thumbnails/reel-lebuffet-2.jpg', alt: 'Le Buffet Lounge experiência', label: 'Energia que inspira', tag: 'Experiência' },
+    { src: '/assets/videos/reel-bodywise-1.mp4', poster: '/assets/thumbnails/reel-bodywise-1.jpg', alt: 'Body Wise treino', label: 'Movimento que transforma', tag: 'Performance' },
+    { src: '/assets/videos/reel-bodywise-2.mp4', poster: '/assets/thumbnails/reel-bodywise-2.jpg', alt: 'Body Wise energia', label: 'Conexão verdadeira', tag: 'Comunidade' },
   ],
+
+  spaceSection: {
+    src: '/assets/videos/reel-lebuffet-1.mp4',
+    poster: '/assets/thumbnails/reel-lebuffet-1.jpg',
+    alt: 'Le Buffet Lounge vista rooftop',
+    title: 'O Espaço',
+    venue: 'Le Buffet Lounge',
+    description: 'Um deck de madeira com vista para o canal de Vitória, jardim vertical de 9m e cobertura retrátil. O cenário perfeito para uma experiência fitness exclusiva.',
+  },
 };

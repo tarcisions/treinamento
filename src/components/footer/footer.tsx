@@ -16,7 +16,7 @@ export function Footer() {
             <span>Mundo da Cosmetologia</span>
           </div>
 
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <a
               href={config.instagramBodywise}
               target="_blank"

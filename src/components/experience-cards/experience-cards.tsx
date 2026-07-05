@@ -19,7 +19,8 @@ export function ExperienceCards() {
             A Experiência
           </span>
           <h2 className="font-display mt-3 text-3xl leading-tight tracking-tight text-cream md:text-5xl">
-            O que esperar
+            O que vem na{' '}
+            <span className="text-gold">segunda edição</span>
           </h2>
         </ScrollReveal>
 
@@ -32,7 +33,7 @@ export function ExperienceCards() {
           {content.experience.map((item, i) => (
             <motion.div
               key={item.title}
-              className="group rounded-sm border border-cream/5 bg-charcoal/50 p-6 backdrop-blur transition-all duration-300 hover:border-gold/20 hover:shadow-[0_0_30px_-10px_#B08D57] md:p-8"
+              className="group rounded-sm border border-cream/5 bg-charcoal/50 p-6 backdrop-blur transition-all duration-300 hover:border-gold/20 hover:bg-charcoal/80 hover:shadow-[0_0_30px_-10px_#B08D57] md:p-8"
               initial={{ opacity: 0, y: 32 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
               transition={{

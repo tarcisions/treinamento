@@ -8,7 +8,7 @@ import { easeOutExpo } from '@/lib/motion';
 
 export function Venue() {
   return (
-    <section className="bg-charcoal py-12 md:py-16">
+    <section className="bg-night py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-6">
         <ScrollReveal>
           <span className="text-xs font-medium tracking-[0.3em] text-gold uppercase">
@@ -21,8 +21,8 @@ export function Venue() {
 
         <SectionDivider />
 
-        <div className="grid gap-4 md:grid-cols-3 md:gap-5">
-          {content.venue.partners.map((partner, i) => (
+          <div className="grid gap-4 md:grid-cols-3 md:gap-5">
+            {content.venue.partners.map((partner, i) => (
             <motion.div
               key={partner.name}
               className="flex flex-col rounded-sm border border-cream/5 bg-night/50 p-5 backdrop-blur md:p-6"
@@ -71,23 +71,54 @@ export function Venue() {
         </div>
 
         <ScrollReveal delay={0.2}>
-          <div className="mt-8 rounded-sm border border-gold/10 bg-gradient-to-br from-night/80 to-charcoal/80 p-6 backdrop-blur md:p-8">
+          <div className="mt-6 text-center">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px flex-1 bg-gradient-to-r from-gold/30 to-transparent" />
-              <span className="text-[10px] font-medium tracking-[0.35em] text-gold/60 uppercase">Sobre o evento</span>
+              <span className="text-[10px] font-medium tracking-[0.35em] text-gold/70 uppercase">Sobre o evento</span>
               <div className="h-px flex-1 bg-gradient-to-l from-gold/30 to-transparent" />
             </div>
-            <p className="text-sm leading-relaxed text-sand/70 text-center max-w-3xl mx-auto md:text-base">
+            <p className="text-sm leading-relaxed text-sand/70 max-w-3xl mx-auto md:text-base">
               {content.venue.description}
             </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-2">
-              {content.venue.highlights.map((h) => (
-                <span key={h} className="inline-flex items-center gap-1.5 rounded-full border border-gold/15 bg-gold/[0.04] px-3 py-1.5 text-[11px] font-medium text-sand/60">
-                  <span className="h-1 w-1 rounded-full bg-gold/50" />
-                  {h}
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.3}>
+          <div className="relative mt-8 overflow-hidden rounded-sm border border-gold/10 min-h-[60vh] md:min-h-[70vh]">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster={content.spaceSection.poster}
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src={content.spaceSection.src} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
+            <div className="absolute bottom-0 left-0 p-6 md:p-8">
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-semibold tracking-[0.25em] text-gold uppercase drop-shadow-[0_1px_6px_rgba(0,0,0,1)]">
+                  {content.spaceSection.venue}
                 </span>
-              ))}
+                <div className="h-px w-8 bg-gold/70" />
+              </div>
+              <h3 className="font-display mt-2 text-2xl leading-tight tracking-tight text-cream drop-shadow-[0_2px_8px_rgba(0,0,0,1)] md:text-4xl">
+                {content.spaceSection.title}
+              </h3>
             </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.4}>
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            {content.venue.highlights.map((h) => (
+              <span key={h} className="inline-flex items-center gap-1.5 rounded-full border border-gold/15 bg-gold/[0.04] px-3 py-1.5 text-[11px] font-medium text-sand/60">
+                <span className="h-1 w-1 rounded-full bg-gold/50" />
+                {h}
+              </span>
+            ))}
           </div>
         </ScrollReveal>
       </div>

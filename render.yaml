@@ -9,11 +9,11 @@ services:
       - key: NODE_VERSION
         value: 20
       - key: NEXT_PUBLIC_EVENT_DATE
-        value: 2026-08-23T06:30:00-03:00
+        value: 2026-08-22T08:00:00-03:00
       - key: NEXT_PUBLIC_TOTAL_VAGAS
-        value: "50"
+        value: "100"
       - key: NEXT_PUBLIC_VAGAS_PREENCHIDAS
-        value: "38"
+        value: "76"
       - key: NEXT_PUBLIC_EVENT_ADDRESS
         value: Le Buffet Lounge — Av. Saturnino Rangel Mauro, 501 - Jardim da Penha, Vitória - ES
       - key: NEXT_PUBLIC_EVENT_MAPS_URL
@@ -26,3 +26,5 @@ services:
         value: https://www.instagram.com/bodywise.treinamentofisico/
       - key: NEXT_PUBLIC_INSTAGRAM_LEBUFFET
         value: https://www.instagram.com/lebuffetoficial/
+      - key: NEXT_PUBLIC_INSTAGRAM_MUNDOCOSMETOLOGIA
+        value: https://www.instagram.com/mundodacosmetologia/
