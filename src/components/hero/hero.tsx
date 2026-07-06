@@ -87,7 +87,7 @@ function StickyCTA() {
             <div className="flex-1 text-left">
               <div className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-gold animate-[progress-pulse_2s_ease-in-out_infinite] sm:h-2 sm:w-2" />
-                <p className="text-xs font-bold tracking-[0.2em] text-gold uppercase animate-[progress-pulse_2s_ease-in-out_infinite] sm:text-sm">1º lote</p>
+                <p className="text-xs font-bold tracking-[0.2em] text-gold uppercase animate-[progress-pulse_2s_ease-in-out_infinite] sm:text-sm">{config.pricingTag.toLowerCase()}</p>
               </div>
               <p className="mt-0.5 text-[10px] text-sand/50 sm:text-xs">Vagas limitadas</p>
             </div>

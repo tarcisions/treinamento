@@ -1,3 +1,5 @@
+import { config } from './config';
+
 export const content = {
   event: {
     name: 'BODY WISE x LE BUFFET LOUNGE',
@@ -10,10 +12,10 @@ export const content = {
   },
 
   pricing: {
-    tag: '1º LOTE',
-    value: 'R$ 247',
+    tag: config.pricingTag,
+    value: config.pricingValue,
     perPerson: 'por pessoa',
-    disclaimer: 'Vagas do 1º lote limitadas — garanta seu lugar no valor especial',
+    disclaimer: config.pricingDisclaimer,
     cta: 'QUERO MINHA VAGA',
   },
 

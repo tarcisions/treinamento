@@ -54,7 +54,7 @@ export function CTAFinal() {
           transition={{ duration: 0.5, delay: 0.3, ease: easeOutExpo }}
         >
           <a
-            href="#"
+            href={config.checkoutUrl}
             className="inline-flex min-h-[52px] w-full items-center justify-center rounded-sm bg-gold px-10 text-sm font-semibold tracking-widest text-night transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_40px_-5px_#B08D57] active:scale-[0.96] sm:w-auto"
           >
             {content.pricing.cta}
