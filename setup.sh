@@ -131,9 +131,9 @@ fi
 # ---- 7. Systemd (rebuild automatico) ----
 echo "[7/8] Configurando systemd..."
 
-cat > /etc/systemd/system/treinodeck.service <<SERVICE
+cat > /etc/systemd/system/treinodeck-rebuild.service <<SERVICE
 [Unit]
-Description=Treino no Deck - Next.js Static Site
+Description=Treino no Deck - Rebuild
 After=network.target
 
 [Service]
@@ -141,9 +141,8 @@ Type=oneshot
 WorkingDirectory=$APP_DIR
 ExecStart=/bin/bash -c 'git pull && npm install && npm run build && systemctl reload nginx'
 User=root
-
-[Install]
-WantedBy=multi-user.target
+StandardOutput=journal
+StandardError=journal
 SERVICE
 
 cat > /etc/systemd/system/treinodeck-rebuild.timer <<TIMER
