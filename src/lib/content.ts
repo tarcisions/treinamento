@@ -155,6 +155,10 @@ export const content = {
       q: 'O evento ocorrerá em caso de chuva?',
       a: 'Em caso de chuva, o evento é remarcado e os inscritos são avisados com antecedência por e-mail/WhatsApp.',
     },
+    {
+      q: 'Posso cancelar minha inscrição?',
+      a: 'Sim. De acordo com o art. 49 do Código de Defesa do Consumidor, as inscrições realizadas pela internet podem ser canceladas em até 7 (sete) dias corridos após a confirmação da compra, desde que o pedido seja feito antes da realização do evento. Nesses casos, o valor pago será devolvido integralmente. Após esse prazo, as inscrições não serão reembolsadas, exceto nas hipóteses previstas em lei.',
+    },
   ],
 
   gallery: [

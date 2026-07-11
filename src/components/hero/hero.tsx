@@ -93,7 +93,9 @@ function StickyCTA() {
             </div>
             <div className="flex items-center gap-3">
               <a
-                href="#inscricoes"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfdNKxxX2UG7RdHby9y_qoo5ALbeQ8BBZTWcw6W28KAYGvZXw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center rounded-sm bg-gold px-6 text-xs font-bold tracking-widest text-night sm:h-12 sm:px-8 sm:text-sm"
               >
                 {content.event.ctaPrimary}
@@ -195,7 +197,9 @@ export function Hero() {
 
             <motion.div variants={fadeUp} className="flex flex-col items-center gap-3 pt-2 sm:flex-row">
               <a
-                href="#inscricoes"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfdNKxxX2UG7RdHby9y_qoo5ALbeQ8BBZTWcw6W28KAYGvZXw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-gold px-8 text-sm font-semibold tracking-widest text-night transition-all duration-200 hover:bg-gold-light hover:shadow-[0_0_30px_-5px_#B08D57] active:scale-[0.97]"
               >
                 {content.event.ctaPrimary}

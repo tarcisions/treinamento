@@ -111,7 +111,9 @@ export function CountdownSection() {
         </motion.div>
 
         <motion.a
-          href={config.checkoutUrl}
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfdNKxxX2UG7RdHby9y_qoo5ALbeQ8BBZTWcw6W28KAYGvZXw/viewform"
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-8 inline-flex min-h-[56px] items-center justify-center rounded-sm bg-gold px-12 text-sm font-bold tracking-widest text-night transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_50px_-5px_#B08D57] active:scale-[0.96] md:px-16"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
