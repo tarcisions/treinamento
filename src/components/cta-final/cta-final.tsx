@@ -54,17 +54,19 @@ export function CTAFinal() {
           transition={{ duration: 0.5, delay: 0.3, ease: easeOutExpo }}
         >
           <a
-            href={config.checkoutUrl}
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfdNKxxX2UG7RdHby9y_qoo5ALbeQ8BBZTWcw6W28KAYGvZXw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-[52px] w-full items-center justify-center rounded-sm bg-gold px-10 text-sm font-semibold tracking-widest text-night transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_40px_-5px_#B08D57] active:scale-[0.96] sm:w-auto"
           >
             {content.pricing.cta}
           </a>
-          <a
-            href="#experience"
+          <button
+            onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-flex min-h-[52px] w-full items-center justify-center rounded-sm border border-cream/20 px-10 text-sm font-semibold tracking-widest text-cream transition-all duration-200 hover:border-cream/40 active:scale-[0.97] sm:w-auto"
           >
             VER PROGRAMAÇÃO
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

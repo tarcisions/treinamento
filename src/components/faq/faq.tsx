@@ -50,9 +50,10 @@ function AccordionItem({
             transition={{ duration: 0.3, ease: easeOutExpo }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-sm leading-relaxed text-sand/60 md:pb-6">
-              {answer}
-            </p>
+            <p
+              className="pb-5 text-sm leading-relaxed text-sand/60 md:pb-6"
+              dangerouslySetInnerHTML={{ __html: answer }}
+            />
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero/hero";
+import { BonusBanner } from "@/components/bonus-banner/bonus-banner";
 import { Manifesto } from "@/components/manifesto/manifesto";
 import { Gallery } from "@/components/gallery/gallery";
 import { CountdownSection } from "@/components/countdown/countdown";

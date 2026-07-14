@@ -33,7 +33,7 @@ export function ExperienceCards() {
           {content.experience.map((item, i) => (
             <motion.div
               key={item.title}
-              className="group rounded-sm border border-cream/5 bg-charcoal/50 p-6 backdrop-blur transition-all duration-300 hover:border-gold/20 hover:bg-charcoal/80 hover:shadow-[0_0_30px_-10px_#B08D57] md:p-8"
+              className="group relative rounded-sm border border-cream/5 bg-charcoal/50 p-6 backdrop-blur transition-all duration-300 hover:border-gold/20 hover:bg-charcoal/80 hover:shadow-[0_0_30px_-10px_#B08D57] md:p-8"
               initial={{ opacity: 0, y: 32 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
               transition={{
@@ -42,6 +42,11 @@ export function ExperienceCards() {
                 ease: easeOutExpo,
               }}
             >
+              {item.title === 'Momento Glow' && (
+                <span className="absolute -top-2.5 right-4 rounded-full bg-gradient-to-r from-gold to-amber-400 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-night shadow-lg">
+                  🔥 Exclusivo para os 20 primeiros
+                </span>
+              )}
               <span className="text-2xl" role="img" aria-hidden="true">
                 {item.icon}
               </span>

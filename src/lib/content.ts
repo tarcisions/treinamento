@@ -2,7 +2,7 @@ import { config } from './config';
 
 export const content = {
   event: {
-    name: 'BODY WISE x LE BUFFET LOUNGE',
+    name: 'LE BUFFET LOUNGE x BODY WISE',
     title: 'TREINO NO DECK',
     subtitle: 'Treine acima da rotina. Um dia de movimento, energia e conexão em uma experiência fitness exclusiva.',
     subtitleInstitutional: 'Uma experiência exclusiva de movimento, energia e conexão em um dos cenários mais bonitos da cidade.',
@@ -44,9 +44,9 @@ export const content = {
 
   experience: [
     {
-      icon: '💪',
-      title: 'Clínica de Kettlebell Training',
-      description: 'Aprenda a utilizar uma das ferramentas mais completas e revolucionárias do treinamento físico. Uma experiência prática conduzida pelos instrutores da Bodywise, com adaptações para todos os níveis de condicionamento.',
+      icon: '✨',
+      title: 'Momento Glow',
+      description: 'Um momento dedicado ao autocuidado com maquiagem e dicas de fotoproteção para você aproveitar o Treino no Deck com ainda mais cuidado e confiança.',
     },
     {
       icon: '🥋',
@@ -60,13 +60,13 @@ export const content = {
     },
     {
       icon: '🧘',
-      title: 'Mobilidade & Relaxamento com Francisco Sávio',
+      title: 'Mobilidade & Relaxamento com Alex Amorim',
       description: 'Um momento para desacelerar, reconectar-se com o seu corpo e descobrir como a mobilidade e a respiração podem transformar a forma como você se movimenta e se sente.',
     },
     {
-      icon: '✨',
-      title: 'Momento Glow',
-      description: 'Um momento dedicado ao autocuidado com maquiagem, cabelo e dicas de fotoproteção para você aproveitar o Treino no Deck com ainda mais cuidado e confiança.',
+      icon: '💪',
+      title: 'Clínica de Kettlebell Training',
+      description: 'Aprenda a utilizar uma das ferramentas mais completas e revolucionárias do treinamento físico. Uma experiência prática conduzida pelos instrutores da Bodywise, com adaptações para todos os níveis de condicionamento.',
     },
     {
       icon: '🌿',
@@ -104,7 +104,7 @@ export const content = {
       {
         name: 'Le Buffet Lounge',
         subtitle: 'Sofisticação com vista',
-        description: 'Uma das casas de eventos mais charmosas da cidade. Situado no canal entre Jardim da Penha e Praia do Canto, oferece um deck de madeira com vista deslumbrante para Vitória, jardim vertical de 9 metros e cobertura retrátil que integra o ambiente ao ar livre.',
+        description: 'A casa de eventos mais charmosa da cidade. Situado no canal entre Jardim da Penha e Praia do Canto, oferece um deck de madeira com vista deslumbrante para Vitória, jardim vertical de 9 metros e cobertura retrátil que integra o ambiente ao ar livre.',
         address: 'Av. Saturnino Rangel Mauro, 501 - Jardim da Penha, Vitória - ES',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Le+Buffet+Lounge+Vitória+ES',
         instagram: 'https://www.instagram.com/lebuffetoficial/',
@@ -123,7 +123,7 @@ export const content = {
   },
 
   timeline: [
-    { time: '08h00 – 10h00', label: ['Salão — Momento Glow', 'Credenciamento'] },
+    { time: '09h00 – 10h00', label: 'Momento Glow' },
     { time: '10h00 – 10h30', label: 'Recepção' },
     { time: '10h30 – 11h30', label: 'Body Wise — Treinamento Tridimensional' },
     { time: '11h30 – 12h30', label: 'Aula de Dança' },
@@ -148,6 +148,10 @@ export const content = {
       a: 'Roupa de treino, tênis confortável, garrafa de água e disposição.',
     },
     {
+      q: 'O que é o Momento Glow e quem tem acesso?',
+      a: 'O Momento Glow é um espaço de autocuidado com maquiagem e dicas de fotoproteção, disponível durante o credenciamento (09h00–10h00). O acesso é exclusivo para as 20 primeiras pessoas inscritas no evento.',
+    },
+    {
       q: 'Existe estacionamento?',
       a: 'Sim, estacionamento próprio no local, em parceria com o Le Buffet Lounge.',
     },
@@ -157,7 +161,11 @@ export const content = {
     },
     {
       q: 'Posso cancelar minha inscrição?',
-      a: 'Sim. De acordo com o art. 49 do Código de Defesa do Consumidor, as inscrições realizadas pela internet podem ser canceladas em até 7 (sete) dias corridos após a confirmação da compra, desde que o pedido seja feito antes da realização do evento. Nesses casos, o valor pago será devolvido integralmente. Após esse prazo, as inscrições não serão reembolsadas, exceto nas hipóteses previstas em lei.',
+      a: 'Sim. Se a inscrição foi realizada pela internet, você poderá solicitar o cancelamento em até 7 (sete) dias corridos após a compra, conforme previsto no art. 49 do Código de Defesa do Consumidor. Nesses casos, o valor pago será devolvido integralmente, desde que o evento ainda não tenha sido realizado.',
+    },
+    {
+      q: 'Ainda ficou com dúvida?',
+      a: 'Fale conosco diretamente pelo WhatsApp. <a href="https://wa.me/5527999011696?text=Olá! Tenho uma dúvida sobre o TREINO NO DECK." target="_blank" rel="noopener noreferrer" class="text-gold underline hover:text-gold-light transition-colors">Clique aqui para enviar sua mensagem</a> e responderemos o mais rápido possível.',
     },
   ],
 

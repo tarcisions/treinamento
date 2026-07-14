@@ -1,61 +1,11 @@
 'use client';
 
 import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useCountdown } from '@/lib/use-countdown';
 import { config } from '@/lib/config';
 import { content } from '@/lib/content';
 import { easeOutExpo } from '@/lib/motion';
-
-function AnimatedPrice({ value }: { value: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const numericValue = parseInt(value.replace(/\D/g, ''), 10);
-
-  return (
-    <motion.span
-      ref={ref}
-      className="font-display relative text-7xl font-bold tracking-tight text-cream md:text-8xl"
-      initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
-      animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
-      transition={{ duration: 0.6, delay: 0.1, ease: easeOutExpo }}
-    >
-      <motion.span
-        initial="hidden"
-        animate={isInView ? 'visible' : 'hidden'}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.05, delayChildren: 0.3 } },
-        }}
-      >
-        {'R$'.split('').map((char, i) => (
-          <motion.span
-            key={`prefix-${i}`}
-            variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}
-            transition={{ duration: 0.3, ease: easeOutExpo }}
-          >
-            {char}
-          </motion.span>
-        ))}
-        <motion.span
-          key="space"
-          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-        >
-          {' '}
-        </motion.span>
-        {numericValue.toString().split('').map((digit, i) => (
-          <motion.span
-            key={`digit-${i}`}
-            variants={{ hidden: { opacity: 0, y: 20, rotateX: -90 }, visible: { opacity: 1, y: 0, rotateX: 0 } }}
-            transition={{ duration: 0.4, ease: easeOutExpo }}
-          >
-            {digit}
-          </motion.span>
-        ))}
-      </motion.span>
-    </motion.span>
-  );
-}
 
 export function CountdownSection() {
   const { isExpired } = useCountdown(config.eventDate);
@@ -85,9 +35,27 @@ export function CountdownSection() {
         </motion.div>
 
         <div className="relative mt-8 flex flex-col items-center">
-          <AnimatedPrice value={content.pricing.value} />
+          <motion.div
+            className="relative flex flex-col items-center"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.05, ease: easeOutExpo }}
+          >
+            <span className="font-display text-lg tracking-wide text-sand/30 line-through decoration-gold/40 decoration-[1px] md:text-xl">
+              R$ 297
+            </span>
+            <div className="relative mt-1 flex items-center justify-center">
+              <span className="font-display text-5xl font-bold tracking-tight text-gold md:text-7xl">
+                R$ 247
+              </span>
+              <span className="absolute -right-16 -top-2 rotate-[-12deg] rounded-md border-2 border-dashed border-gold/60 px-2.5 py-1 text-[10px] font-bold tracking-wider text-gold/80 md:-right-20 md:-top-3 md:px-3 md:py-1.5 md:text-xs">
+                OFERTA<br />ESPECIAL
+              </span>
+            </div>
+          </motion.div>
           <motion.span
-            className="relative text-sm tracking-[0.1em] text-sand/60 md:text-base"
+            className="relative mt-1 text-sm tracking-[0.1em] text-sand/60 md:text-base"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

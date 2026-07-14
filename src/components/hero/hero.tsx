@@ -92,14 +92,12 @@ function StickyCTA() {
               <p className="mt-0.5 text-[10px] text-sand/50 sm:text-xs">Vagas limitadas</p>
             </div>
             <div className="flex items-center gap-3">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfdNKxxX2UG7RdHby9y_qoo5ALbeQ8BBZTWcw6W28KAYGvZXw/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => document.getElementById('inscricoes')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex h-11 items-center justify-center rounded-sm bg-gold px-6 text-xs font-bold tracking-widest text-night sm:h-12 sm:px-8 sm:text-sm"
               >
                 {content.event.ctaPrimary}
-              </a>
+              </button>
             </div>
           </div>
         </motion.div>
@@ -110,8 +108,11 @@ function StickyCTA() {
 
 export function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [hasHydrated, setHasHydrated] = useState(false);
   const { days, hours, minutes, seconds, isReady } = useCountdown(config.eventDate);
   const formattedDate = useMemo(() => formatEventDate(config.eventDate), [config.eventDate]);
+
+  useEffect(() => { setHasHydrated(true); }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -177,7 +178,7 @@ export function Hero() {
                 {formattedDate}
               </p>
 
-              {isReady && (
+              {isReady && hasHydrated && (
                 <div className="flex flex-col items-center gap-3">
                   <span className="text-[10px] font-medium tracking-[0.3em] text-gold/60 uppercase">
                     Faltam apenas
@@ -196,20 +197,18 @@ export function Hero() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="flex flex-col items-center gap-3 pt-2 sm:flex-row">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfdNKxxX2UG7RdHby9y_qoo5ALbeQ8BBZTWcw6W28KAYGvZXw/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => document.getElementById('inscricoes')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex h-12 items-center justify-center rounded-sm bg-gold px-8 text-sm font-semibold tracking-widest text-night transition-all duration-200 hover:bg-gold-light hover:shadow-[0_0_30px_-5px_#B08D57] active:scale-[0.97]"
               >
                 {content.event.ctaPrimary}
-              </a>
-              <a
-                href="#experience"
+              </button>
+              <button
+                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
                 className="inline-flex h-12 items-center justify-center rounded-sm border border-cream/20 px-8 text-sm font-semibold tracking-widest text-cream transition-all duration-200 hover:border-cream/40 active:scale-[0.97]"
               >
                 {content.event.ctaSecondary}
-              </a>
+              </button>
             </motion.div>
           </motion.div>
 
