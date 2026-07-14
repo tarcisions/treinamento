@@ -43,7 +43,7 @@ export function CountdownSection() {
             transition={{ duration: 0.4, delay: 0.05, ease: easeOutExpo }}
           >
             <span className="font-display text-lg tracking-wide text-sand/30 line-through decoration-gold/40 decoration-[1px] md:text-xl">
-              R$ 297
+              R$ 285
             </span>
             <div className="relative mt-1 flex items-center justify-center">
               <span className="font-display text-5xl font-bold tracking-tight text-gold md:text-7xl">

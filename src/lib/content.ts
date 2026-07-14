@@ -119,7 +119,7 @@ export const content = {
       },
     ],
     description: 'O TREINO NO DECK reúne Body Wise, Le Buffet Lounge e Mundo da Cosmetologia by Marcella Porto em uma experiência única que une movimento, bem-estar e autocuidado em um dos cenários mais bonitos da cidade.',
-    highlights: ['Jardim vertical de 9m', 'Cobertura retrátil — ambiente aberto ou climatizado', 'Espaço preparado para uma experiência fitness exclusiva'],
+    highlights: ['Jardim vertical de 9m', 'Cobertura retrátil — ambiente aberto ou climatizado', 'Espaço preparado para uma experiência fitness exclusiva', 'Estacionamento no local'],
   },
 
   timeline: [
