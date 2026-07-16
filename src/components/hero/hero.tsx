@@ -134,9 +134,10 @@ export function Hero() {
             muted
             loop
             playsInline
+            suppressHydrationWarning
             className="h-full w-full object-cover"
           >
-            <source src="/assets/videos/hero-bg.mp4" type="video/mp4" />
+            <source src="/assets/videos/hero-bg.mp4" type="video/mp4" suppressHydrationWarning />
           </video>
           <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-transparent to-night/40" />

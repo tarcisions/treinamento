@@ -50,8 +50,8 @@ export const content = {
     },
     {
       icon: '🥋',
-      title: 'Defesa Pessoal com Sensei Andrey Xavier',
-      description: '4º Dan (KWF Japão) e representante oficial da Karatenomichi World Federation no Espírito Santo. Aprenda técnicas de defesa pessoal, confiança e consciência corporal em uma experiência prática para o dia a dia.',
+      title: 'Defesa Pessoal',
+      description: 'Aprenda técnicas de defesa pessoal, confiança e consciência corporal em uma experiência prática para o dia a dia.',
     },
     {
       icon: '💃',

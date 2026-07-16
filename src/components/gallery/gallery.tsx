@@ -71,12 +71,13 @@ function VideoBlock({ item, index }: { item: typeof content.gallery[number]; ind
           muted
           loop
           playsInline
+          suppressHydrationWarning
           preload="metadata"
           poster={item.poster}
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src={item.src} type="video/mp4" />
-        </video>
+            <source src={item.src} type="video/mp4" suppressHydrationWarning />
+          </video>
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/40" />
 
@@ -128,12 +129,13 @@ function VideoBlock({ item, index }: { item: typeof content.gallery[number]; ind
                 muted
                 loop
                 playsInline
+                suppressHydrationWarning
                 controls
                 preload={index === 0 ? 'metadata' : 'none'}
                 poster={item.poster}
                 className="h-full w-full object-cover"
               >
-                <source src={item.src} type="video/mp4" />
+                <source src={item.src} type="video/mp4" suppressHydrationWarning />
               </video>
               <button
                 onClick={() => setOpen(false)}

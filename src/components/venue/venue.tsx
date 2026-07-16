@@ -90,11 +90,12 @@ export function Venue() {
               muted
               loop
               playsInline
+              suppressHydrationWarning
               preload="none"
               poster={content.spaceSection.poster}
               className="absolute inset-0 h-full w-full object-cover"
             >
-              <source src={content.spaceSection.src} type="video/mp4" />
+              <source src={content.spaceSection.src} type="video/mp4" suppressHydrationWarning />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
             <div className="absolute bottom-0 left-0 p-6 md:p-8">
