@@ -126,11 +126,11 @@ export const content = {
     { time: '09h00 – 10h00', label: 'Momento Glow' },
     { time: '10h00 – 10h30', label: 'Recepção' },
     { time: '10h30 – 11h30', label: 'Body Wise — Treinamento Tridimensional' },
-    { time: '11h30 – 12h30', label: 'Aula de Dança' },
+    { time: '11h30 – 12h30', label: 'Defesa Pessoal' },
     { time: '12h30 – 13h30', label: 'Brunch' },
     { time: '13h30 – 14h00', label: 'Bate-papo Skincare' },
     { time: '14h00 – 15h00', label: 'Body Wise — Clínica de Kettlebell Training' },
-    { time: '15h00 – 16h00', label: 'Defesa Pessoal' },
+    { time: '15h00 – 16h00', label: 'Aula de Dança' },
     { time: '16h00 – 17h00', label: 'Mobilidade e Relaxamento' },
   ],
 
