@@ -6,8 +6,7 @@ export const config = {
   instagramLebuffet: process.env.NEXT_PUBLIC_INSTAGRAM_LEBUFFET || 'https://www.instagram.com/lebuffetoficial/',
   instagramMarcella: process.env.NEXT_PUBLIC_INSTAGRAM_MUNDOCOSMETOLOGIA || 'https://www.instagram.com/mundodacosmetologia/',
   pricingTag: process.env.NEXT_PUBLIC_PRICING_TAG || '1º LOTE',
-  pricingValue: process.env.NEXT_PUBLIC_PRICING_VALUE || 'R$ 247',
-  pricingDisclaimer: process.env.NEXT_PUBLIC_PRICING_DISCLAIMER || 'Vagas do 1º lote limitadas — garanta seu lugar no valor especial',
+  pricingDisclaimer: process.env.NEXT_PUBLIC_PRICING_DISCLAIMER || 'Vagas do 1º lote limitadas — garanta seu lugar',
   totalVagas: Number(process.env.NEXT_PUBLIC_TOTAL_VAGAS || '100'),
   vagasPreenchidas: Number(process.env.NEXT_PUBLIC_VAGAS_PREENCHIDAS || '76'),
 } as const;

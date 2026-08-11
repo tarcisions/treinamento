@@ -13,8 +13,6 @@ export const content = {
 
   pricing: {
     tag: config.pricingTag,
-    value: config.pricingValue,
-    perPerson: 'por pessoa',
     disclaimer: config.pricingDisclaimer,
     cta: 'QUERO MINHA VAGA',
   },

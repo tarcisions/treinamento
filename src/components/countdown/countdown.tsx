@@ -22,51 +22,24 @@ export function CountdownSection() {
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center md:max-w-4xl">
         <div className="absolute inset-0 -inset-x-20 -inset-y-10 bg-gold/[0.03] blur-3xl pointer-events-none" />
         <motion.div
-          className="inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gradient-to-r from-gold/[0.08] to-gold/[0.15] px-6 py-2.5 shadow-[0_0_20px_-5px_rgba(176,141,87,0.3)]"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          className="relative mt-10 flex flex-col items-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: easeOutExpo }}
+          transition={{ duration: 0.4, delay: 0.05, ease: easeOutExpo }}
         >
           <span className="h-2 w-2 rounded-full bg-gold animate-[progress-pulse_2s_ease-in-out_infinite]" />
-          <span className="text-xs font-bold tracking-[0.25em] text-gold uppercase">
+          <span className="font-display mt-6 text-6xl font-bold tracking-tight text-gold drop-shadow-[0_0_30px_rgba(176,141,87,0.25)] md:text-8xl">
             {content.pricing.tag}
+          </span>
+          <div className="mt-6 h-px w-32 bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+          <span className="mt-6 text-sm tracking-[0.25em] text-sand/60 uppercase md:text-base">
+            Vagas limitadas
           </span>
         </motion.div>
 
-        <div className="relative mt-8 flex flex-col items-center">
-          <motion.div
-            className="relative flex flex-col items-center"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.05, ease: easeOutExpo }}
-          >
-            <span className="font-display text-lg tracking-wide text-sand/30 line-through decoration-gold/40 decoration-[1px] md:text-xl">
-              R$ 285
-            </span>
-            <div className="relative mt-1 flex items-center justify-center">
-              <span className="font-display text-5xl font-bold tracking-tight text-gold md:text-7xl">
-                R$ 247
-              </span>
-              <span className="absolute -right-16 -top-2 rotate-[-12deg] rounded-md border-2 border-dashed border-gold/60 px-2.5 py-1 text-[10px] font-bold tracking-wider text-gold/80 md:-right-20 md:-top-3 md:px-3 md:py-1.5 md:text-xs">
-                OFERTA<br />ESPECIAL
-              </span>
-            </div>
-          </motion.div>
-          <motion.span
-            className="relative mt-1 text-sm tracking-[0.1em] text-sand/60 md:text-base"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.6 }}
-          >
-            {content.pricing.perPerson}
-          </motion.span>
-        </div>
-
         <motion.div
-          className="mt-6 flex items-center justify-center gap-2"
+          className="mt-8 flex items-center justify-center gap-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
