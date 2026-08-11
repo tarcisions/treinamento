@@ -79,7 +79,7 @@ export function CountdownSection() {
         </motion.div>
 
         <motion.a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfdNKxxX2UG7RdHby9y_qoo5ALbeQ8BBZTWcw6W28KAYGvZXw/viewform"
+          href="https://www.sympla.com.br/evento/treino-no-deck-2-edicao/3536173"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex min-h-[56px] items-center justify-center rounded-sm bg-gold px-12 text-sm font-bold tracking-widest text-night transition-all duration-300 hover:bg-gold-light hover:shadow-[0_0_50px_-5px_#B08D57] active:scale-[0.96] md:px-16"
