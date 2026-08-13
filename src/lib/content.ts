@@ -48,7 +48,7 @@ export const content = {
     },
     {
       icon: '🥋',
-      title: 'Defesa Pessoal',
+      title: 'Defesa Pessoal com Shiko Alvarenga',
       description: 'Aprenda técnicas de defesa pessoal, confiança e consciência corporal em uma experiência prática para o dia a dia.',
     },
     {
@@ -58,8 +58,8 @@ export const content = {
     },
     {
       icon: '🧘',
-      title: 'Mobilidade & Relaxamento com Alex Amorim',
-      description: 'Um momento para desacelerar, reconectar-se com o seu corpo e descobrir como a mobilidade e a respiração podem transformar a forma como você se movimenta e se sente.',
+      title: 'Meditação & Relaxamento com Alex Amorim',
+      description: 'Um momento para desacelerar, reconectar-se com o seu corpo e descobrir como a meditação e a respiração podem transformar a forma como você se movimenta e se sente.',
     },
     {
       icon: '💪',
@@ -124,12 +124,12 @@ export const content = {
     { time: '09h00 – 10h00', label: 'Momento Glow' },
     { time: '10h00 – 10h30', label: 'Recepção' },
     { time: '10h30 – 11h30', label: 'Body Wise — Treinamento Tridimensional' },
-    { time: '11h30 – 12h30', label: 'Defesa Pessoal' },
+    { time: '11h30 – 12h30', label: 'Aula de Dança' },
     { time: '12h30 – 13h30', label: 'Brunch' },
     { time: '13h30 – 14h00', label: 'Bate-papo Skincare' },
     { time: '14h00 – 15h00', label: 'Body Wise — Clínica de Kettlebell Training' },
-    { time: '15h00 – 16h00', label: 'Aula de Dança' },
-    { time: '16h00 – 17h00', label: 'Mobilidade e Relaxamento' },
+    { time: '15h00 – 16h00', label: 'Defesa Pessoal' },
+    { time: '16h00 – 17h00', label: 'Meditação e Relaxamento' },
   ],
 
   faq: [
