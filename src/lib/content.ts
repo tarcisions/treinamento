@@ -155,7 +155,7 @@ export const content = {
     },
     {
       q: 'O evento ocorrerá em caso de chuva?',
-      a: 'Em caso de chuva, o evento é remarcado e os inscritos são avisados com antecedência por e-mail/WhatsApp.',
+      a: 'O local possui estrutura completa para o evento acontecer normalmente mesmo com chuva.',
     },
     {
       q: 'Posso cancelar minha inscrição?',
