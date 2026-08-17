@@ -121,7 +121,7 @@ export const content = {
   },
 
   timeline: [
-    { time: '09h00 – 10h00', label: 'Momento Glow' },
+    { time: '09h00 – 10h00', label: ['Momento Glow', 'Exclusivo para os 20 primeiros inscritos'] },
     { time: '10h00 – 10h30', label: 'Recepção' },
     { time: '10h30 – 11h30', label: 'Body Wise — Treinamento Tridimensional' },
     { time: '11h30 – 12h30', label: 'Aula de Dança' },
