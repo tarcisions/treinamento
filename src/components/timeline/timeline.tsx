@@ -38,9 +38,9 @@ export function Timeline() {
                 ease: easeOutExpo,
               }}
             >
-              <div className={`group relative py-3 md:py-4 ${i === 0 ? 'rounded-sm border border-gold/25 bg-gold/[0.06] px-3 py-4 shadow-[0_0_30px_-10px_rgba(176,141,87,0.35)] md:px-4' : ''}`}>
+              <div className="group relative py-3 md:py-4">
                 <div className="flex items-center gap-3">
-                  <span className={`${i === 0 ? 'text-gold' : 'text-gold/30'}`}>◆</span>
+                  <span className="text-gold/30">◆</span>
                   <span className="font-display text-lg tracking-tight text-gold md:text-xl">
                     {item.time}
                   </span>
@@ -48,16 +48,11 @@ export function Timeline() {
                 </div>
                 <div className="ml-6 mt-1.5">
                   {Array.isArray(item.label) ? (
-                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                      <p className="text-sm font-semibold leading-relaxed text-cream md:text-base">
-                        {item.label[0]}
+                    item.label.map((line, li) => (
+                      <p key={li} className={li > 0 ? 'text-sm leading-relaxed text-sand/50' : 'text-sm leading-relaxed text-cream/80 md:text-base'}>
+                        {line}
                       </p>
-                      {item.label.length > 1 && (
-                        <span className="inline-flex items-center gap-1 rounded-full border border-gold/40 bg-gold/10 px-2.5 py-0.5 text-[10px] font-bold tracking-wider text-gold uppercase md:text-xs">
-                          {item.label.slice(1).join(' · ')}
-                        </span>
-                      )}
-                    </div>
+                    ))
                   ) : (
                     <p className="text-sm leading-relaxed text-cream/80 md:text-base">
                       {item.label}
